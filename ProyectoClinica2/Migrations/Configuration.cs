@@ -22,8 +22,7 @@
                     PacienteNombre = "Fernando",
                     PacienteApellidos = "Rodriguez Salcedo",
                     PacienteFechaNacimiento = new DateTime(1975, 5, 4),
-                    PacienteTelefono = Convert.ToInt32(4256836),
-                    CitaId = 1
+                    PacienteTelefono = Convert.ToInt32(4256836)
                 },
                 new Paciente()
                 {
@@ -31,8 +30,7 @@
                     PacienteNombre = "Alonso",
                     PacienteApellidos = "Rojas Sanchez",
                     PacienteFechaNacimiento = new DateTime(1984, 9, 13),
-                    PacienteTelefono = Convert.ToInt32(4103275),
-                    CitaId = 2
+                    PacienteTelefono = Convert.ToInt32(4103275)
                 },
                 new Paciente()
                 {
@@ -40,8 +38,7 @@
                     PacienteNombre = "Paula",
                     PacienteApellidos = "Cardona Arias",
                     PacienteFechaNacimiento = new DateTime(1990, 11, 24),
-                    PacienteTelefono = Convert.ToInt32(4853022),
-                    CitaId = 3
+                    PacienteTelefono = Convert.ToInt32(4853022)
                 }
             );
 
@@ -49,20 +46,23 @@
                 new Cita()
                 {
                     CitaId = 1,
-                    CitaFecha = new DateTime(2019, 06, 02),
-                    TiposCitaId = 1
+                    CitaFecha = new DateTime(2019, 06, 02, 13, 30, 00),
+                    TiposCitaId = 1,
+                    PacienteId = 1
                 },
                 new Cita()
                 {
                     CitaId = 2,
-                    CitaFecha = new DateTime(2019, 07, 20),
-                    TiposCitaId = 4
+                    CitaFecha = new DateTime(2019, 07, 20, 08, 00, 00),
+                    TiposCitaId = 4,
+                    PacienteId = 2
                 },
                 new Cita()
                 {
                     CitaId = 3,
-                    CitaFecha = new DateTime(2019, 07, 21),
-                    TiposCitaId = 2
+                    CitaFecha = new DateTime(2019, 07, 21, 15, 00, 00),
+                    TiposCitaId = 2, 
+                    PacienteId = 3
                 }
             );
 

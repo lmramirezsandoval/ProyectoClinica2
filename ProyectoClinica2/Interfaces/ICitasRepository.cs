@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace ProyectoClinica2.Interfaces
 {
-    public interface ICitasService
+    public interface ICitasRepository: IDisposable
     {
-
-        Task<bool> CancelarCita(int id, Cita cita);
+        IQueryable<Cita> GetCitas();
+        Task<Cita> GetCita(int id);
+        Task<bool> ActualizarCita(int id, Cita cita);
+        Task<bool> CancelarCita(int id);
         Task<bool> AsignarCita(Cita cita);
     }
 }

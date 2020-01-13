@@ -13,12 +13,14 @@
                     {
                         CitaId = c.Int(nullable: false, identity: true),
                         CitaFecha = c.DateTime(nullable: false),
+                        PacienteId = c.Int(nullable: false),
                         TiposCitaId = c.Int(nullable: false),
-                        Paciente_PacienteId = c.Int(),
                     })
                 .PrimaryKey(t => t.CitaId)
-                .ForeignKey("dbo.Pacientes", t => t.Paciente_PacienteId)
-                .Index(t => t.Paciente_PacienteId);
+                .ForeignKey("dbo.Pacientes", t => t.PacienteId, cascadeDelete: true)
+                .ForeignKey("dbo.TiposCitas", t => t.TiposCitaId, cascadeDelete: true)
+                .Index(t => t.PacienteId)
+                .Index(t => t.TiposCitaId);
             
             CreateTable(
                 "dbo.Pacientes",
@@ -29,7 +31,6 @@
                         PacienteApellidos = c.String(),
                         PacienteFechaNacimiento = c.DateTime(nullable: false),
                         PacienteTelefono = c.Int(nullable: false),
-                        CitaId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.PacienteId);
             
@@ -46,8 +47,10 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Citas", "Paciente_PacienteId", "dbo.Pacientes");
-            DropIndex("dbo.Citas", new[] { "Paciente_PacienteId" });
+            DropForeignKey("dbo.Citas", "TiposCitaId", "dbo.TiposCitas");
+            DropForeignKey("dbo.Citas", "PacienteId", "dbo.Pacientes");
+            DropIndex("dbo.Citas", new[] { "TiposCitaId" });
+            DropIndex("dbo.Citas", new[] { "PacienteId" });
             DropTable("dbo.TiposCitas");
             DropTable("dbo.Pacientes");
             DropTable("dbo.Citas");

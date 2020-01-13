@@ -13,7 +13,6 @@ namespace ProyectoClinica2.Models
         public DateTime PacienteFechaNacimiento { get; set; }
         public int PacienteTelefono { get; set; }
 
-        public int CitaId { get; set; }
-        public ICollection<Cita> Cita { get; set; }
+        public ICollection<Cita> Citas { get; set; }
     }
 }

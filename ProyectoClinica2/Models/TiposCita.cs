@@ -9,5 +9,7 @@ namespace ProyectoClinica2.Models
     {
         public int TiposCitaId { get; set; }
         public string TiposCitaDescripcion { get; set; }
+
+        public ICollection<Cita> Citas { get; set; }
     }
 }

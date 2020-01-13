@@ -13,7 +13,7 @@ namespace ProyectoClinica2.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202001101514393_Initial"; }
+            get { return "202001122252009_Initial"; }
         }
         
         string IMigrationMetadata.Source
